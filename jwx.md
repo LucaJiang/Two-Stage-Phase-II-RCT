@@ -151,4 +151,4 @@ $$\text{EN}(p_0) =n_1+n_2 (1-\text{PET}(p_0))$$
 
 1. U.S. Food and Drug Administration (FDA). *Step 3: Clinical Research*. The Drug Development Process. [https://www.fda.gov/patients/drug-development-process/step-3-clinical-research](https://www.fda.gov/patients/drug-development-process/step-3-clinical-research).
 2. Simon, Richard. 1989. “Optimal Two-Stage Designs for Phase II Clinical Trials.” Controlled Clinical Trials 10 (1): 1–10., doi: [10.1016/0197-2456(89)90015-9](10.1016/0197-2456(89)90015-9).
-
+3. Hao Sun. *Chapter 2 Phase II design: Simon’s two-stage design*. Design Notebook. 2023.[https://bookdown.org/eugenesun95/designbook/phase-ii-design.html#simons-two-stage-design](https://bookdown.org/eugenesun95/designbook/phase-ii-design.html#simons-two-stage-design)
