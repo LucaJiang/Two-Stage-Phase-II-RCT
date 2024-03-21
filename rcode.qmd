@@ -1,0 +1,41 @@
+---
+title: "Two Stage Randomized Controlled Trial"
+author: "Jiang Wenxin"
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# install necessary packages
+install.packages("clinfun")
+```
+
+```{r}
+library(clinfun)
+pu <- 0.05 # uninteresting response rate p_0
+pa <- 0.25 # desirable response rate p_1
+ep1 <- 0.1 # type I error rate: threshold for the probability of declaring drug desirable under pu
+ep2 <- 0.1 # type II error rate: threshold for the probability of rejecting drug under pa
+result <- ph2simon(pu, pa, ep1, ep2, nmax = 100)
+```
+
+```{r}
+result
+```
+
+```{r}
+# plots the expected sample size against the maximum sample size as in Jung et al., 2001
+# https://onlinelibrary.wiley.com/doi/10.1002/sim.1600
+# save img to png
+png("img/ph2simon.png", width = 800, height = 600, res = 100)
+plot(result)
+dev.off()
+```
+
+```{r}
+```
+
