@@ -23,7 +23,7 @@ Three main phases of clinical trials$^{[1]}$:
 - **Endpoints**: Binary (e.g., response vs. no response)
 - **Hypothesis**:
 $$
-\begin{aligned}
+\begin{aligned}\tag{1}
 H_0: p \leq p_0 \quad &\text{vs.} \quad H_1: p \geq p_1 \\
 \text{type I error: } \alpha & = P(\text{rej. } H_0 | H_0) \\
     \text{type II error: } \beta & = P(\text{rej. } H_1 | H_1)
@@ -39,10 +39,10 @@ where $p$ is the true response rate and $p_0$ and $p_1$ are the uninteresting le
 
 Let set $p_0 = .05$, $p_1 = .25$, $\alpha = .10$, and $\beta = .10$ and calculate the sample size under Simon's two-stage optimal design$^{[2]}$. Note: $n, n_i, r, r_i, x_i, i=1,2$ are integers.
 
-<figure>
+<!-- <figure>
     <center><img src="./img/flowchart.png" style="zoom:.3"></center>
     <figcaption style="text-align: center;">Fig 1: Flowchart of Simon's two-stage design</figcaption>
-</figure>
+</figure> -->
 
 | Notation | Definition                  | Value |
 | -------- | --------------------------- | ----: |
@@ -53,8 +53,18 @@ Let set $p_0 = .05$, $p_1 = .25$, $\alpha = .10$, and $\beta = .10$ and calculat
 | $x_2$    | # responses in stage II     |     ? |
 | $r$      | total rejection points      |     2 |
 
+Accept only if $x_1 \geq r_1$ and $x_1+x_2 \geq r$.
+
+-----
+
+<h3>A Motivating Example (cont'd)</h3>
 
 <center><h4><strong>Question: Why we need a two-stage design?</strong></h4></center>
+
+<figure>
+    <center><img src="./img/flowchart.png" style="zoom:.3"></center>
+    <figcaption style="text-align: center;">Fig 1: Flowchart of Simon's two-stage design</figcaption>
+</figure>
 
 <!--     | $p_0$                        | uninteresting level | .05 |
 | $p_1$    | desirable level              | .25                 |
@@ -101,13 +111,13 @@ Suppose $X_1 \sim \text{Bin}\left(n_1, p\right)$ and $X_2 \sim \text{Bin}\left(n
 - Success if $\xi_S=\left\{X_1>r_1\right.$ AND $\left.X_1+X_2>r\right\}$
 
 Therefore,
-$$
-P\left(\xi_F \mid p \leq p_0\right) \leq \alpha, \quad P\left(\xi_S \mid p \geq p_1\right) \geq 1-\beta
+$$\tag{2}
+P\left(\xi_F \mid p \leq p_0\right) \leq \alpha, \quad P\left(\xi_F \mid p \geq p_1\right) \leq \beta
 $$
 
 Moreover, we have
 $$
-\begin{aligned}
+\begin{aligned}\tag{3}
 P\left(\xi_S \mid p\right) & =\sum_{x_1>r_1, x_1+x_2>r} b\left(x_1 ; n_1, p\right) b\left(x_2 ; n_2, p\right) \\
 P\left(\xi_F \mid p\right) & =1-P\left(\xi_S \mid p\right) \\
 & =B\left(r_1 ; n_1, p\right)+\sum_{x=r_1+1}^{\min \left\{n_1, r\right\}} b\left(x ; n_1, p\right) B\left(r-x ; n_2, p\right)
@@ -119,14 +129,14 @@ $$
 <h3>Calculation of Sample Size (cont'd)</h3>
 
 The probability of early rejection in stage I is
-$$\begin{aligned}
+$$\begin{aligned}\tag{4}
 \text{PET}(p_0)&=P\left(X_1 \leq r_1 \mid p=p_0\right)\\
 & = \text{Bin}(r_1; n_1, p_0)\\
 & = \sum_{i=0}^{r_1} \binom{n_1}{i} p_0^i (1-p_0)^{n_1-i}
 \end{aligned}$$
 
 The expected sample size EN$\left(p_0\right)$ is given by
-$$\text{EN}(p_0) =n_1+n_2 (1-\text{PET}(p_0))$$
+$$\tag{5}\text{EN}(p_0) =n_1+n_2 (1-\text{PET}(p_0))$$
 
 -----
 
@@ -134,10 +144,11 @@ $$\text{EN}(p_0) =n_1+n_2 (1-\text{PET}(p_0))$$
 
 <center><img src="./img/algo.png" style="zoom:.4"></center>
 
+Then, calculate PET$(p_0)$ and EN$(p_0)$. The minimax design chooses the pair $(r_1, r, n_1, n_2)$ that minimizes $n$, while the optimal design chooses the pair that minimizes EN$(p_0)$.
+
 -----
 
 <h3>Results of the Algorithm</h3>
-
 
 <figure>
     <center><img src="./img/ph2simon.png" style="zoom:.8"></center>

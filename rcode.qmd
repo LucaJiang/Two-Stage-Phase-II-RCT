@@ -31,8 +31,9 @@ result
 # plots the expected sample size against the maximum sample size as in Jung et al., 2001
 # https://onlinelibrary.wiley.com/doi/10.1002/sim.1600
 # save img to png
-png("img/ph2simon.png", width = 800, height = 600, res = 100)
+png("img/ph2simon.png", width = 2000, height = 1500, res = 200, pointsize = 18)
 plot(result)
+legend("topright", legend = c("Simon's 2-stage design"), col = c("black"), lty = 1)
 dev.off()
 ```
 
