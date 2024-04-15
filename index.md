@@ -113,10 +113,8 @@ If early termination is allowed, the expected sample size EN is less than the to
 
 Suppose # responses in stage I and stage II $X_1 \sim \text{Bin}\left(n_1, p\right)$ and $X_2 \sim \text{Bin}\left(n_2, p\right)$, respectively. We declare the new drug a
 
-- Failure if 
-  $\xi_F=\left\{X_1 \leq r_1\right\}$ OR $\left\{X_1>r_1, X_1+X_2 \leq r\right\}$
-- Success if
-  $\xi_S=\left\{X_1>r_1, X_1+X_2>r\right\}$
+- Failure if $\xi_F: X_1 \leq r_1$ OR ($X_1>r_1$ and $X_1+X_2 \leq r$)
+- Success if $\xi_S: X_1>r_1$ and $X_1+X_2>r$
 
 Therefore,
 $$\begin{equation*}
