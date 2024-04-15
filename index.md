@@ -22,12 +22,15 @@ Three main phases of clinical trials$^{[1]}$:
 - **Objective**: Determine if the new treatment is **effective** enough to warrant further study in a larger phase III trial, as well as to further assess safety.
 - **Endpoints**: Binary (e.g., response vs. no response)
 - **Hypothesis**:
+
 $$
-\begin{aligned}\tag{1}
+\begin{equation}
+\begin{align}
 H_0: p \leq p_0 \quad &\text{vs.} \quad H_1: p \geq p_1 \\
 \text{type I error: } \alpha & = P(\text{rej. } H_0 | H_0) \\
     \text{type II error: } \beta & = P(\text{rej. } H_1 | H_1)
-\end{aligned}
+\end{align}
+\end{equation}
 $$
 where $p$ is the true response rate and $p_0$ and $p_1$ are the uninteresting level and the desirable level, respectively.
 
@@ -96,10 +99,10 @@ If early termination is allowed, the expected sample size EN is less than the to
 - **Optimal design**: Minimize EN$(p_0)$ when $p=p_0$ subject to the constraints of $\alpha$ and $\beta$.
 - **Minimax design**: Minimize $n$ when $p=p_0$ subject to the constraints of $\alpha$ and $\beta$.
 - **Constraints**:
-  $$\begin{aligned}
+  $$\begin{align*}
    \alpha & = P(\text{rej. } H_0 | H_0) \\
    \beta  & = P(\text{rej. } H_1 | H_1)
-   \end{aligned}$$
+   \end{align*}$$
 
 -----
 
@@ -107,21 +110,23 @@ If early termination is allowed, the expected sample size EN is less than the to
 
 Suppose # responses in stage I and stage II $X_1 \sim \text{Bin}\left(n_1, p\right)$ and $X_2 \sim \text{Bin}\left(n_2, p\right)$, respectively. We declare the new drug a
 
-- Failure if $\xi_F=X_1 \leq r_1$ OR $\left\{X_1>r_1\right.$ AND $\left.X_1+X_2 \leq r\right\}$
-- Success if $\xi_S=\left\{X_1>r_1\right.$ AND $\left.X_1+X_2>r\right\}$
+- Failure if $\xi_F=X_1 \leq r_1$ OR $\left\{X_1>r_1\text{ AND }X_1+X_2 \leq r\right\}$
+- Success if $\xi_S=\left\{X_1>r_1\text{ AND }X_1+X_2>r\right\}$
 
 Therefore,
-$$\tag{2}
+$$\begin{equation}
 P\left(\xi_F \mid p \leq p_0\right) \leq \alpha, \quad P\left(\xi_F \mid p \geq p_1\right) \leq \beta
+\end{equation}
 $$
 
 Moreover, we have
-$$
-\begin{aligned}\tag{3}
+$$\begin{equation}
+\begin{align}
 P\left(\xi_S \mid p\right) & =\sum_{x_1>r_1, x_1+x_2>r} b\left(x_1 ; n_1, p\right) b\left(x_2 ; n_2, p\right) \\
 P\left(\xi_F \mid p\right) & =1-P\left(\xi_S \mid p\right) \\
 & =B\left(r_1 ; n_1, p\right)+\sum_{x=r_1+1}^{\min \left\{n_1, r\right\}} b\left(x ; n_1, p\right) B\left(r-x ; n_2, p\right)
-\end{aligned}
+\end{align}
+\end{equation}
 $$
 
 -----
@@ -129,11 +134,15 @@ $$
 <h3>Calculation of Sample Size (cont'd)</h3>
 
 The probability of early rejection in stage I is
-$$\begin{aligned}\tag{4}
+$$
+\begin{equation}
+\begin{align}
 \text{PET}(p_0)&=P\left(X_1 \leq r_1 \mid p=p_0\right)\\
 & = \text{Bin}(r_1; n_1, p_0)\\
 & = \sum_{i=0}^{r_1} \binom{n_1}{i} p_0^i (1-p_0)^{n_1-i}
-\end{aligned}$$
+\end{align}
+\end{equation}
+$$
 
 The expected sample size EN$\left(p_0\right)$ is given by
 $$\tag{5}\text{EN}(p_0) =n_1+n_2 (1-\text{PET}(p_0))$$
