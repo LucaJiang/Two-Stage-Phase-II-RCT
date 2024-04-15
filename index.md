@@ -113,8 +113,8 @@ If early termination is allowed, the expected sample size EN is less than the to
 
 Suppose # responses in stage I and stage II $X_1 \sim \text{Bin}\left(n_1, p\right)$ and $X_2 \sim \text{Bin}\left(n_2, p\right)$, respectively. We declare the new drug a
 
-- Failure if $\xi_F=X_1 \leq r_1$ OR $\left\{X_1>r_1\text{ AND }X_1+X_2 \leq r\right\}$
-- Success if $\xi_S=\left\{X_1>r_1\text{ AND }X_1+X_2>r\right\}$
+- Failure if $\xi_F=X_1 \leq r_1$ OR $\left\{X_1>r_1\right.$ AND $\left.X_1+X_2 \leq r\right\}$
+- Success if $\xi_S=\left\{X_1>r_1\right.$ AND $\left.X_1+X_2>r\right\}$
 
 Therefore,
 $$\begin{equation*}
@@ -139,7 +139,7 @@ $$
 The probability of early rejection in stage I is
 $$
 \begin{equation*}
-\begin{aligned}\tag{4}
+\begin{aligned}
 \text{PET}(p_0)&=P\left(X_1 \leq r_1 \mid p=p_0\right)\\
 & = \text{Bin}(r_1; n_1, p_0)\\
 & = \sum_{i=0}^{r_1} \binom{n_1}{i} p_0^i (1-p_0)^{n_1-i}
@@ -154,7 +154,7 @@ $$\tag{5}\text{EN}(p_0) =n_1+n_2 (1-\text{PET}(p_0))$$
 
 ## Algorithm for Simon's Two-Stage Design
 
-<center><img src="./img/algo.png" style="zoom:.4"></center>
+<center><img src="./img/algo.png" style="zoom:.55"></center>
 
 Then, calculate PET$(p_0)$ and EN$(p_0)$. The minimax design chooses the pair $(r_1, r, n_1, n_2)$ that minimizes $n$, while the optimal design chooses the pair that minimizes EN$(p_0)$.
 
@@ -163,7 +163,7 @@ Then, calculate PET$(p_0)$ and EN$(p_0)$. The minimax design chooses the pair $(
 <h3>Results of the Algorithm</h3>
 
 <figure>
-    <center><img src="./img/ph2simon.png" style="zoom:.8"></center>
+    <center><img src="./img/ph2simon.png" style="zoom:.7"></center>
     <figcaption style="text-aligned: center;">Fig 2: Sample size calculation results. The 'M' stands for minimax design and the 'O' stands for optimal design.
     </figcaption>
 </figure>
