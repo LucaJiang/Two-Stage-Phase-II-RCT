@@ -17,7 +17,7 @@ Three main phases of clinical trials$^{[1]}$:
 
 -----
 
-## Phase II Clinical Trials: Definition
+## Phase II Clinical Trials
 
 - **Objective**: Determine if the new treatment is **effective** enough to warrant further study in a larger phase III trial, as well as to further assess safety.
 - **Endpoints**: Binary (e.g., response vs. no response)
@@ -91,7 +91,7 @@ If early termination is allowed, the expected sample size EN is less than the to
 
 -----
 
-## Phase II Clinical Trials: Definition (cont'd)
+## Phase II Clinical Trials: (cont'd)
 
 - **Optimal design**: Minimize EN$(p_0)$ when $p=p_0$ subject to the constraints of $\alpha$ and $\beta$.
 - **Minimax design**: Minimize $n$ when $p=p_0$ subject to the constraints of $\alpha$ and $\beta$.
@@ -105,7 +105,7 @@ If early termination is allowed, the expected sample size EN is less than the to
 
 ## Calculation of Sample Size
 
-Suppose $X_1 \sim \text{Bin}\left(n_1, p\right)$ and $X_2 \sim \text{Bin}\left(n_2, p\right)$. We declare the new drug a
+Suppose # responses in stage I and stage II $X_1 \sim \text{Bin}\left(n_1, p\right)$ and $X_2 \sim \text{Bin}\left(n_2, p\right)$, respectively. We declare the new drug a
 
 - Failure if $\xi_F=X_1 \leq r_1$ OR $\left\{X_1>r_1\right.$ AND $\left.X_1+X_2 \leq r\right\}$
 - Success if $\xi_S=\left\{X_1>r_1\right.$ AND $\left.X_1+X_2>r\right\}$
