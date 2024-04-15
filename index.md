@@ -1,5 +1,9 @@
 # Optimal Two-Stage Designs for Phase II Clinical Trials
 
+Author: Jiang Wenxin
+
+Date: 2024 April 16
+
 -----
 
 ## Introduction: Clinical Trials
@@ -12,7 +16,6 @@ Three main phases of clinical trials$^{[1]}$:
 | II    | Efficacy and side effects                    | Up to several hundred patients        | Approx. 33%     |
 | III   | Efficacy and monitoring of adverse reactions | 300 to 3,000 patients                 | Approx. 25%-30% |
 
-
 <!-- FDA. https://www.fda.gov/patients/drug-development-process/step-3-clinical-research-->
 
 -----
@@ -24,13 +27,13 @@ Three main phases of clinical trials$^{[1]}$:
 - **Hypothesis**:
 
 $$
-\begin{equation}
-\begin{align}
+\begin{equation*}
+\begin{aligned}
 H_0: p \leq p_0 \quad &\text{vs.} \quad H_1: p \geq p_1 \\
 \text{type I error: } \alpha & = P(\text{rej. } H_0 | H_0) \\
     \text{type II error: } \beta & = P(\text{rej. } H_1 | H_1)
-\end{align}
-\end{equation}
+\end{aligned}
+\end{equation*}
 $$
 where $p$ is the true response rate and $p_0$ and $p_1$ are the uninteresting level and the desirable level, respectively.
 
@@ -44,7 +47,7 @@ Let set $p_0 = .05$, $p_1 = .25$, $\alpha = .10$, and $\beta = .10$ and calculat
 
 <!-- <figure>
     <center><img src="./img/flowchart.png" style="zoom:.3"></center>
-    <figcaption style="text-align: center;">Fig 1: Flowchart of Simon's two-stage design</figcaption>
+    <figcaption style="text-aligned: center;">Fig 1: Flowchart of Simon's two-stage design</figcaption>
 </figure> -->
 
 | Notation | Definition                  | Value |
@@ -66,7 +69,7 @@ Accept only if $x_1 \geq r_1$ and $x_1+x_2 \geq r$.
 
 <figure>
     <center><img src="./img/flowchart.png" style="zoom:.3"></center>
-    <figcaption style="text-align: center;">Fig 1: Flowchart of Simon's two-stage design</figcaption>
+    <figcaption style="text-aligned: center;">Fig 1: Flowchart of Simon's two-stage design</figcaption>
 </figure>
 
 <!--     | $p_0$                        | uninteresting level | .05 |
@@ -99,10 +102,10 @@ If early termination is allowed, the expected sample size EN is less than the to
 - **Optimal design**: Minimize EN$(p_0)$ when $p=p_0$ subject to the constraints of $\alpha$ and $\beta$.
 - **Minimax design**: Minimize $n$ when $p=p_0$ subject to the constraints of $\alpha$ and $\beta$.
 - **Constraints**:
-  $$\begin{align*}
+  $$\begin{aligned}
    \alpha & = P(\text{rej. } H_0 | H_0) \\
    \beta  & = P(\text{rej. } H_1 | H_1)
-   \end{align*}$$
+   \end{aligned}$$
 
 -----
 
@@ -114,19 +117,19 @@ Suppose # responses in stage I and stage II $X_1 \sim \text{Bin}\left(n_1, p\rig
 - Success if $\xi_S=\left\{X_1>r_1\text{ AND }X_1+X_2>r\right\}$
 
 Therefore,
-$$\begin{equation}
+$$\begin{equation*}
 P\left(\xi_F \mid p \leq p_0\right) \leq \alpha, \quad P\left(\xi_F \mid p \geq p_1\right) \leq \beta
-\end{equation}
+\end{equation*}
 $$
 
 Moreover, we have
-$$\begin{equation}
-\begin{align}
+$$\begin{equation*}
+\begin{aligned}
 P\left(\xi_S \mid p\right) & =\sum_{x_1>r_1, x_1+x_2>r} b\left(x_1 ; n_1, p\right) b\left(x_2 ; n_2, p\right) \\
 P\left(\xi_F \mid p\right) & =1-P\left(\xi_S \mid p\right) \\
 & =B\left(r_1 ; n_1, p\right)+\sum_{x=r_1+1}^{\min \left\{n_1, r\right\}} b\left(x ; n_1, p\right) B\left(r-x ; n_2, p\right)
-\end{align}
-\end{equation}
+\end{aligned}
+\end{equation*}
 $$
 
 -----
@@ -135,13 +138,13 @@ $$
 
 The probability of early rejection in stage I is
 $$
-\begin{equation}
-\begin{align}
+\begin{equation*}
+\begin{aligned}\tag{4}
 \text{PET}(p_0)&=P\left(X_1 \leq r_1 \mid p=p_0\right)\\
 & = \text{Bin}(r_1; n_1, p_0)\\
 & = \sum_{i=0}^{r_1} \binom{n_1}{i} p_0^i (1-p_0)^{n_1-i}
-\end{align}
-\end{equation}
+\end{aligned}
+\end{equation*}
 $$
 
 The expected sample size EN$\left(p_0\right)$ is given by
@@ -161,7 +164,7 @@ Then, calculate PET$(p_0)$ and EN$(p_0)$. The minimax design chooses the pair $(
 
 <figure>
     <center><img src="./img/ph2simon.png" style="zoom:.8"></center>
-    <figcaption style="text-align: center;">Fig 2: Sample size calculation results. The 'M' stands for minimax design and the 'O' stands for optimal design.
+    <figcaption style="text-aligned: center;">Fig 2: Sample size calculation results. The 'M' stands for minimax design and the 'O' stands for optimal design.
     </figcaption>
 </figure>
 
