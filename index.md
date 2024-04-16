@@ -162,7 +162,25 @@ Then, calculate PET$(p_0)$ and EN$(p_0)$. The minimax design chooses the pair $(
 
 -----
 
-<h3>Results of the Algorithm</h3>
+## Results
+
+```
+ Simon 2-stage Phase II design 
+
+Unacceptable response rate:  0.05 
+Desirable response rate:  0.25 
+Error rates: alpha =  0.1 ; beta =  0.1 
+
+           r1 n1 r  n EN(p0) PET(p0)   qLo   qHi
+Minimax     0 13 2 20  16.41  0.5133 0.523 1.000
+Admissible  0 11 2 21  15.31  0.5688 0.332 0.523
+Admissible  0 10 2 22  14.82  0.5987 0.119 0.332
+Optimal     0  9 2 24  14.55  0.6302 0.000 0.119
+```
+
+-----
+
+<h3>Results (cont'd)</h3>
 
 <center><figure>
     <img src="./img/ph2simon.png" style="zoom:.7">
@@ -172,7 +190,7 @@ Then, calculate PET$(p_0)$ and EN$(p_0)$. The minimax design chooses the pair $(
 
 -----
 
-## References
+## Reference
 
 1. U.S. Food and Drug Administration (FDA). *Step 3: Clinical Research*. The Drug Development Process. [https://www.fda.gov/patients/drug-development-process/step-3-clinical-research](https://www.fda.gov/patients/drug-development-process/step-3-clinical-research).
 2. Simon, Richard. 1989. “Optimal Two-Stage Designs for Phase II Clinical Trials.” Controlled Clinical Trials 10 (1): 1–10., doi: [10.1016/0197-2456(89)90015-9](10.1016/0197-2456(89)90015-9).
