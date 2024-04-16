@@ -8,6 +8,8 @@ Date: 2024 April 16
 
 ## Introduction: Clinical Trials
 
+Goal: Determine if a new test or treatment works and is safe.
+
 Three main phases of clinical trials$^{[1]}$:
 
 | Phase | Purpose                                      | Typical number of participants        | Success rate    |
@@ -67,10 +69,10 @@ Accept only if $x_1 \geq r_1$ and $x_1+x_2 \geq r$.
 
 <center><h4><strong>Question: Why we need a two-stage design?</strong></h4></center>
 
-<figure>
-    <center><img src="./img/flowchart.png" style="zoom:.3"></center>
+<center><figure>
+    <img src="./img/flowchart.png" style="zoom:.3">
     <figcaption style="text-aligned: center;">Fig 1: Flowchart of Simon's two-stage design</figcaption>
-</figure>
+</figure></center>
 
 <!--     | $p_0$                        | uninteresting level | .05 |
 | $p_1$    | desirable level              | .25                 |
@@ -86,7 +88,7 @@ Accept only if $x_1 \geq r_1$ and $x_1+x_2 \geq r$.
 | Notation   | Definition                                   | Value |
 | ---------- | -------------------------------------------- | ----: |
 | $n$        | total sample size                            |    24 |
-| PET$(p_0)$ | probability of early termination under $p_0$ |   .63 |
+| PET$(p_0)$ | probability of early termination under $p_0$ |  0.63 |
 | EN$(p_0)$  | expected sample size under $p_0$             |  14.5 |
 
 $\text{PET}(p_0) = P(x_1 \leq r_1 | p=p_0) = \text{Bin}(r_1; n_1, p_0) = \sum_{i=0}^{r_1} \binom{n_1}{i} p_0^i (1-p_0)^{n_1-i} = .63$
@@ -162,11 +164,11 @@ Then, calculate PET$(p_0)$ and EN$(p_0)$. The minimax design chooses the pair $(
 
 <h3>Results of the Algorithm</h3>
 
-<figure>
-    <center><img src="./img/ph2simon.png" style="zoom:.7"></center>
+<center><figure>
+    <img src="./img/ph2simon.png" style="zoom:.7">
     <figcaption style="text-aligned: center;">Fig 2: Sample size calculation results. The 'M' stands for minimax design and the 'O' stands for optimal design.
     </figcaption>
-</figure>
+</figure></center>
 
 -----
 
